@@ -1,22 +1,45 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://unpkg.com/vue@next"></script>
+    <title>Vue.js Routing From Scratch Using Vue Router CDN</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
   </head>
   <body>
-    <div id="app">
-      <h1>Tutorial de Vue</h1>
-      <div v-if="showBooks">
-        <h2>{{title}} - {{author}} - {{year}}</h2>
+    <div id="app" class="container" style="margin-top: 50px">
+      
+      <nav
+        class="navbar navbar-expand-lg navbar-light"
+        style="background-color: #e3f2fd"
+      >
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li><router-link class="nav-link" to="/"> Home </router-link></li>
+            <li>
+              <router-link class="nav-link" to="/about"> About </router-link>
+            </li>
+            <li>
+              <router-link class="nav-link" to="/contact"> Contact </router-link>
+            </li>
+            <li>
+              {{nota}}
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="text-center" style="margin-top: 20px">
+        <router-view></router-view>
       </div>
-
-      <button v-on:click="year++">Increase age</button>
-      <button v-on:click="year--">Decrease age</button>
-      <button @click="showBooks2()">Show books</button>
     </div>
+
+    <!-- Vue Pages -->
+
+    <!-- Vue Instance and Routes -->
     <script src="app.js"></script>
+
   </body>
 </html>
